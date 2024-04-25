@@ -1,0 +1,472 @@
+https://meet.google.com/xzf-jiup-wnu
+
+PLAN for 24th and 25th APril (Last 2 days of training):
+24th:
+ANGULAR
+CRUD Operations MEAN
+25th:
+MEAN Project-1 on Dashboard Code and explanation
+MERN Project-2 on Dashboard Code and explanation
+MERN Project-3 and MEAN Project-4 development by Participants
+
+Different sample data set available: Hospital, eCommerce ....
+Use of Filters to filter the data in sample data set.
+
+Git Repo of training delivered so far by Mr.Rakesh:
+Link-1:
+https://github.com/HarshithaHS22/isocrates
+Link-2:
+https://github.com/Hemanth7892/isocrates
+------------------------------------------------
+To create backend App:
+$ npm init -y
+This creates the package.json file
+Now we create a new file named backend.mjs in our project folder
+.mjs file is to use the latest syntax (that we use in react and angular)
+
+-> We implement the backend code in Express.
+-> Express works on Node Environment (Node is JS based runtime environment. It helps us to work outside the browser).
+
+
+// STEPS TO RUN THE SERVER (ONLY):
+1. We need an instance of express
+2. Add the Middlewares
+3. Add the code to run the server (app.listen() )
+4. run the server ($ node backend.mjs)
+$ node backend.mjs
+	The above command runs the server on port 8080
+--------------------------------------------------
+// STEPS TO CONNECT TO THE DB USING MONGOOSE:
+install all the required libraries: 
+	$ npm install cors mongoose express
+The above command installs the libraries and creates the folder node_modules
+
+1. We need an instance of express
+2. Add the Middlewares
+3. Add the code to run the server (app.listen() )
+4. run the server ($ node backend.mjs)
+5. create the api end point functions
+6. Register the 5 API end points
+7. Run the API end points (postman or thunder client)
+
+MONGOOSE CODE:
+1. Function to convert mongodb object to customised object
+2. Function to create the Model and the Model object":
+	1. Specify the timestamp as false
+	2. Create the metadata
+	3. schema and schema.method()
+	4. return the model object
+
+
+To connect the backend and the DB, we need middlewares
+mongoose to connect to the DB
+cors that understands the path we use to connect the backend (BE) with the FE and also cors acts as security layer.
+
+"http://mongodbcompass-localhost:27017/nithin_db.trainers"
+
+
+Node is installed
+mongodb is installed
+mongosh is installed
+compass (GUI) is installed (Optional)
+
+Create a folder for the App: trainer_app
+Entity is trainer
+Fields:
+name			string
+technology		string
+location		string
+years_of_exp	number
+phone_num		number
+commercial		number
+
+db.trainers.insert({name:'pranav', technology: 'data_science', location: 'mysuru', years_of_exp : 1, phone_num : 9480273090, commercial : 21500});
+
+Create collection in mongodb:
+db.createCollection('trainers');
+----------------------------------------------------
+ANGULAR NOTES:
+
+Angular is a JS framework that allows us to build SPA (Mobile and Desktop)
+
+Framework:
+-> It is a platform to develop Applications
+-> It will have predefined library (classes and functions) which otherwise we should build the App from scratch.
+-> To be specific, a Framework provides APIs for performing different opearations when used in an Application.
+--------------------------------
+To work on Angular we need:
+
+1. Install Node (from nodejs.org  Better choose LTS version)
+	We get the CLI npm
+-> NodeJS is the runtime environment to execute JS code outside of the Browser.
+
+2. Install Angular CLI globally:
+	$ npm install -global @angular/cli@latest
+	or
+	$ npm install -global @angular/cli@16.0.1	
+	We get the CLI ng
+	
+	To check if Angular is successfully installed:
+	$ ng version
+	
+	To uninstall angular CLI:
+	npm uninstall -g @angular/cli
+	npm cache clean --force
+	Also:
+	Folder that can be deleted:
+	C\users\appData........npm\node_modules\@angular
+angular CLI is also used to create deployable packages.
+	
+	
+	
+3. Create an Angular Project
+	Create a workspace folder
+	ng new <project name>
+	
+	ng new trainers
+	
+	Routing: Yes
+	Select basic CSS
+	Downloading of packages starts
+	
+4. Compile and Run the project
+	Now go inside the project folder <trainers>
+	$ ng serve 
+	It complies our project, creats bundles for angular and css and lastly, it opens the lve development server to run the project.
+	Port No. for Angular is 4200
+	http://localhost/4200
+	Note: Server is now running
+	
+5. Edit the Project:
+	Open the project folder in the VS Code
+	Remove contect from body tag (And the web page will be empty)
+	Watch out for the content of the App Component (.css .ts .spec.ts .html)
+	The selector key is used to name the component
+	The content of the component is given by the key templateURL: component.html 
+	The content of the .html is rendered to the page which if can modify and check.
+	Lastly, use the value of the variable title into the content of the tag of the html page. You may introduce new variables as well.
+
+6. To make the page dynamic, we must write .ts code which is implicitly converted to .js code and this JS code makes the page dynamic.
+
+7.	node modules folder: It is used purely for development purpose and not for
+	production server. All the 3rd party libraries can be found here. That is the libraries that we download from npm command.
+
+	While in mid of the development of a project if some files or folders or libraries are not available or it is deleted, then we can download them using $ npm install
+
+8.	
+package.json
+	This file consists of all the libraries/packages we directly dependent on (dependencies)
+	And also the devDependencies which has the packages that are dependent while development of the angular project is going on.
+editorconfig
+	This file is used mainly by the TechLead to specify the coding standards to the team-mates. Because different developers may use different standards and these developers may be working on the same project
+angular.json
+	This file has all the project configurations (angular related configurations)
+package-lock.json
+	It records the version of all dependencies and also the sub-dependencies
+
+9.
+app folder
+	When we create any new component or module, we create it in app folder.
+	Every Angular Project must have at least one component and one component ts file
+assets folder
+	It is a public folder
+	It will have all the images, videos, gif and may be excel files and text files.
+localhost/4200/assets/k2.jpg
+	We can create sub folders in the assests folder.
+favicon.ico
+	The icon that is displayed next to the title of the webpage
+main.ts
+	Starting point of Angular project
+index.html
+	Is the main html file that gets rendered in the browser when the angular project runs.
+	It has no css files referenced because all the dependencies are injected during the build process
+style.css
+	The styling of the webpage/component goes here
+
+Bootstraping ANGULAR App:
+Angular Project -> Index.html -> angular.json -> main.ts -> AppModule -> AppComponent -> appComponent.html -> css file
+
+Every component has a view template which is a .html file
+
+TypeScript is developed by MS and it is superset of JS. Thus any JS code/file is also a TS code/file.
+
+Browsers cannot understand TypeScript.
+Hence it must be converted to JS.
+TypeScript is strongly typed and hence it is more specific.
+TypeScript has more features such as OO concepts than JS
+We can catch the errors in TypeScript during compile time.
+
+Angular is component based SPA framework.
+A component is a piece of UI.
+Every ANGULAR App has at least one Component which is refered to as App-Component
+Thus Angular App is a Tree of Components
+Each component can be worked upon separately.
+
+How to create a Component:
+1. We must create a child component and hence create it within app folder
+2. create a folder named header
+	create a .ts file as: header.component.ts
+3. create a TypeScript class and export it
+4. Decorate the class with @Component decorator and specify the selector and the view template. Declare it in app.module file
+
+@Component  // This makes the class a component class (also import this from angular core library)
+export class HeaderComponent {
+	
+}
+
+Every component must have a view template
+@Component ({
+selector: 'app-header';
+template: '<h2> Angular trainer </h2>';
+})
+
+Now in app-module.ts import the component created:
+import { HeaderComponent } ......
+
+Also add the component in the declarations Array (inside ngModule)
+
+Now in app.component.html:
+<app-header> </app-header>
+
+
+View template of a component is the html which tells the Angular how to render the component to the browser.
+Say suppose the view is too big (big html code) then specifying it with in a string is too combursome.
+Instead of template, we now use templateURL and we create a header.component.html and put the html code in it. And mention this file with path in the templateURL.
+
+Use of styles property for our component:
+styles: ['a{'margin: 0 10px;'}', 'button{}']
+Here 0 for top bottom and 10 for left right
+
+stylesURL:['./header.component.css']
+specify path of the css file
+Can specify multiple files by separating the string (path) with comma
+NOTE: Unlike ReactJS, in Angular, the css file which is applied to a component is  not applid to the child component. To apply the same css file to the child or some other component, we must add it using the stylesURL property of the component.
+
+To apply css globally (to all the components) we must add the css in styles.css in src folder.
+
+We can find the fonts in: fonts.google.com
+
+We can add advanced styling using fontawesome.com
+search for font awesome 4
+-------------------------------------
+Use BootStrap in Angular:
+
+1. To use Bootstrap in our App, go to angular.json and add the bootstrap path in styles array. "node_modules/bootstrap/dist/css/bootstrap.min.css"
+
+2. install bootstrap using terminal: $ npm i --save bootstrap (Latest version)
+We can specify the version also: $ npm i --save bootstrap@3
+Now it should be available in node_modules folder
+Next, add the bootstrap path in styles array: "node_modules/bootstrap/dist/css/bootstrap.min.css"
+
+3. Alternatively, we can import the path in styles.css file:
+@import "~../node_modules/bootstrap/dist/css/bootstrap.min.css"
+
+4. To uninstall bootstrap: $ npm uninstall bootstrap
+
+
+CREATE COMPONENET USING CLI
+
+ng generate component component-name
+1. It creates the component decorated with @Component
+2. Generates the view template and the stylesheet
+3. Registers the component in the main module.
+
+--------------------------------------------------------
+Build Dashboard using Angular
+
+Compose SDK in www.sisense.com
+BI Analytics
+
+Visualization using Charts:
+1. www.sisense.com
+2. iCharts Open source Libraries
+
+Sample Data Set:
+Sales, 
+
+KPIs: Keep Performance Indicators
+
+https://meet.google.com/xzf-jiup-wnu
+
+--------------------------------------------------------
+// import the libraries
+import express from "express";
+import cors from "cors";
+import mongoose from "mongoose";
+
+// create the instance of express
+const app = express();
+
+// cors-origin path
+const cors_origin = "http://localhost:3030";
+
+// Add the required Middlewares
+app.use(cors(cors_origin));
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
+// Connect to Mongoose
+const mongo_url = "mongodb://127.0.0.1:27017/nithin_db?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.1.3"
+
+// Connect to Mongoose
+const mongocompass_url = "http://mongodbcompass-localhost:27017/nithin_db.trainers"
+
+function connectToMongoose() {
+    mongoose.connect(mongo_url);
+    console.log(`Connected to the DB`);
+}
+
+// Convert Mongo returned object into our customised object
+const toJSON = function() {
+    const { __v, _id, ...myCustomisedObj } = this.toObject();
+    myCustomisedObj.id = _id;
+    return myCustomisedObj;
+}
+
+// Define Trainer Model
+function getTrainerModel() {
+    const collection_meta_extra = {
+        timestamps: false
+    };
+
+    const collection_metadata = {
+        name        : String,
+        technology  : String,
+        location    : String,
+        years_of_exp: Number,
+        phone_num   : Number,
+        commercial  : Number
+    };
+  
+    const schema = mongoose.Schema(collection_metadata, collection_meta_extra);
+    schema.method("toJSON", toJSON);        
+    const TrainerModel = mongoose.model("trainer", schema);
+    
+    return TrainerModel;
+}
+// Call the functions to connect to DB
+connectToMongoose();
+const TrainerModel = getTrainerModel();
+
+// API End Points
+async function listAllTrainers(req, res) {
+    const trainers = await TrainerModel.find();
+    res.send(trainers);
+}
+
+async function createTrainer(req, res) {
+    const trainer = await TrainerModel.create(req.body);
+    res.send(trainer);
+}
+
+async function searchTrainer(req, res) {
+    const trainer = await TrainerModel.findOne({_id : req.params.id});
+    res.send(trainer);
+}
+
+async function updateTrainer(req, res) {
+    const trainer = await TrainerModel.findOneAndUpdate({ _id : req.params.id }, req.body, {new: true});
+    res.send(trainer);
+}
+
+async function deleteTrainer(req, res) {
+    const trainer = await TrainerModel.findOneAndDelete({ _id : req.params.id });
+    res.send(`Trainer with id ${req.params.id} is deleted`);
+}
+
+// Registering the End Points(Routers/Routes):
+app.get("/trainers", listAllTrainers);
+app.post("/trainers", createTrainer);
+app.get("/trainers/:id", searchTrainer);
+app.put("/trainers/:id", updateTrainer);
+app.delete("/trainers/:id", deleteTrainer);
+
+// 4. Run the server (This we put at the end of the file)
+const server_port = "8080";
+
+function fnRunServer() {
+    console.log(`http://localhost:${server_port} is the server`);
+}
+
+app.listen(server_port, fnRunServer);
+------------------------------------------------------
+THURSDAY 25-04-2024 SISENSE NOTES:
+
+Command to create react app with type script:
+
+$ npx create-react-app nithinapp --template typescript
+
+Command to create react app with type script within the same folder:
+(Name of the App will be the folder name itself)
+$ npx create-react-app . --template typescript
+
+Vite is build tool (Can be used as Abstract over npm and npx commands)
+VITE App:
+
+To create a new App(Project):
+npm create vite@latest
+
+Ok to proceed? (y) y
+√ Project name: ... rcharts (rcharts is the name we gave to our project)
+√ Select a framework: » React (We select react as FE development frame work)
+√ Select a variant: » TypeScript (we selected TS)
+
+Further, run the below 3 commands:
+cd rcharts (Go inside the project folder)
+npm install (Installs all the required libraries)
+npm run dev (To run the App)
+
+http://localhost:5173/
+ 
+Use of Hook in React:
+
+const onChange = function(event) {
+	const stud = { ...student }
+	stud.name = event.value
+	setStudent(stud)
+}
+
+npm i @sisense/sdk-ui @sisense/sdk-data
+
+
+npx @sisense/sdk-cli@latest get-data-model --username "jstraining@isocrates.com" --output src/sample-ecommerce.ts --dataSource "Sample ECommerce" --url https://madtechbidev.isocrates.com
+
+
+---------------------------------------------------
+Run the Angular 17 CRUD example
+You can run this App with command: ng serve.
+
+They configure CORS for port 8081, so you have to run command: ng serve --port 8081 instead.
+---------------------------------------------------
+Git Hub Repository token for 20240425:
+
+---------------------------------------------------
+Google Search: tailwind react install
+
+From the below URL, copy and install the commands
+
+https://tailwindcss.com/docs/guides/create-react-app
+
+npm install -D tailwindcss
+npx tailwindcss init
+
+Next, add the 3 packages as given in the documentation in the file index.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+Copy: "./src/**/*.{js,jsx,ts,tsx}",
+into content array in tailwind.config.js
+
+NOTE: If bootstrap is being used, remove it's entry from package.json and also it's import from various components/files.
+
+Create file output.css under src folder
+
+In main.tsx replace:
+import './index.css'
+with:
+import './output.css'
+
+Run the below command:
+npx tailwindcss -i ./src/index.css -o ./src/output.css --watch
+
