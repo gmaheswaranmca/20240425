@@ -469,4 +469,114 @@ import './output.css'
 
 Run the below command:
 npx tailwindcss -i ./src/index.css -o ./src/output.css --watch
+---------------------------------------------------------
+SISENSE DASHBOARD AND FILTERS USING ANGULAR:
+
+Create a new folder for our Angular App (acharts)
+Run the below command from inside the new folder path
+
+$ npm init @angular compose-sdk-app --standalone false
+OR
+$ ng new compose-sdk-app --standalone false
+Choose CSS
+And select NO to server side rendering
+
+
+Now go inside the App folder "compose-sdk-app"
+Run the command to run the App:
+$ npm start
+OR
+$ ng serve (If Angular is installed/available)
+
+Add the allowSyntheticDefaultImports flag to the compilerOptions section in your tsconfig.json file. 
+"allowSyntheticDefaultImports" : true
+
+
+Installing SDK Packages:
+$ npm i @sisense/sdk-ui-angular @sisense/sdk-data
+
+Generating a Data Model Representation:
+
+Template Command:
+npx @sisense/sdk-cli@latest get-data-model --username "<username>" --output src/sample-healthcare.ts --dataSource "Sample Healthcare" --url <your_instance_url>
+
+Command We Run:
+$ npx @sisense/sdk-cli@latest get-data-model --username "jstraining@isocrates.com" --output src/sample-healthcare.ts --dataSource "Sample Healthcare" --url https://madtechbidev.isocrates.com
+
+Note: The above command when run 
+1. prompts for the password.
+2. sample-healthcare.ts must be created in src folder
+
+Now open the app.module.ts and add the entries:
+In the import Array:
+	SdkUiModule
+    BrowserModule
+Add the providers array as given in the Guide:
+providers: [
+    { provide: SISENSE_CONTEXT_CONFIG_TOKEN, useValue: SISENSE_CONTEXT_CONFIG },
+  ]
+
+Add the Authentication config in app.module.ts
+
+export const SISENSE_CONTEXT_CONFIG: SisenseContextConfig = {
+  url: '<instance url>', // replace with the URL of your Sisense instance
+  token: '<api token>', // replace with the API token of your user account
+};
+
+To create a new component, use the command:
+$ npx ng generate component analytics
+OR
+$ ng g c analytics
+
+The above command creates 4 new files in a new folder and also updates the app.module.ts (the new component is added in the declarations section)
+
+Now delete the content from the app.component.html except: <router-outlet/> (The last line)
+
+Adding a component and routing:
+
+From the sisense Guide, copy the content of the class  for the file: analytics.component.ts
+
+Copy the required import statements from the Guide:
+import { measureFactory } from '@sisense/sdk-data';
+import * as DM from '../../sample-healthcare';
+
+Now copy the content for analytics.component.html
+
+Copy the below json into Routes Array/section of app-routing.module.ts
+{ path: '', component: AnalyticsComponent }
+
+Now run the App using: ng serve
+--------------------------
+Stop the App
+
+Create a new Component named: bar-chart-example
+
+Copy the content of the class in bar-chart-example.component.ts from the guide (https://csdk-angular.sisense.com/charts)
+
+Create a new file example-data.ts file in src folder and copy the content from the guide (Sample data: https://csdk-angular.sisense.com/charts)
+
+Now add the 2 components in app.component.html
+
+Run the App: We must get 2 charts one below the other
+-----------------------
+Next step is to add tailwind to our App
+Run the below 2 commands: 
+
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init
+
+In the file tailwind.config.js in the section content, add the below:
+"./src/**/*.{html,ts}",
+
+Now in the file styles.css add the below entry:
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+Now create a new folder output.css in src folder
+
+Run the command:
+npx tailwindcss -i ./src/styles.css -o ./src/output.css --watch
+
+npx @sisense/sdk-cli@latest get-data-model --username "jstraining@isocrates.com" --output src/sample-ecommerce.ts --dataSource "Sample ECommerce" --url https://madtechbidev.isocrates.com
 

@@ -1,0 +1,10 @@
+<div class="grid grid-cols-2">
+    <div style="height:400px;" class="col-lg-6">
+        <csdk-member-filter-tile title="Category" [dataSource]="DM.DataSource" [attribute]="DM.Category.Category"
+            [filter]="membersFilter" (filterChange)="onMembersFilterChange($event)" />
+    </div>
+    <div class="col-lg-6">
+        <csdk-chart chartType="line" [dataSet]="DM.DataSource" [dataOptions]="dataOptions"
+            [filters]="[membersFilter]" />
+    </div>
+</div>
